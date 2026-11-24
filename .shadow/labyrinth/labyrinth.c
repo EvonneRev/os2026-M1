@@ -6,6 +6,8 @@
 #include <testkit.h>
 #include "labyrinth.h"
 
+static bool printOriginalMap(const char *filename);
+
 int main(int argc, char *argv[]) {
     // TODO: Implement this function
     const char *filename = NULL;
