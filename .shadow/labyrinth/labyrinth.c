@@ -257,15 +257,12 @@ bool movePlayer(Labyrinth *labyrinth, char playerId, const char *direction) {
 
     Position pos = findPlayer(labyrinth,playerId);
     // 玩家不存在：放置玩家，本次操作到此结束。
-    if(pos.row == -1){
-        Position empty = findFirstEmptySpace(labyrinth);
+    if (pos.row == -1) {
+    pos = findFirstEmptySpace(labyrinth);
 
-        if(empty.row == -1){
-            return false;
-        }
-
-        labyrinth->map[empty.row][empty.col] = playerId;
-        return true;
+    if (pos.row == -1) {
+        return false;
+    }
     }
     int nextRow = pos.row + dr;
     int nextCol = pos.col + dc;
